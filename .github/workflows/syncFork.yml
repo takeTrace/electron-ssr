@@ -1,0 +1,14 @@
+name: SyncFork
+on:
+  schedule:
+    - cron: "30 0 * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TG908/fork-sync@v1.1.6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          owner: shadowsocksrr
+          base: master
+          head: master
